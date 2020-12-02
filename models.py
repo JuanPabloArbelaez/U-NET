@@ -28,7 +28,7 @@ class ContractingBlock(nn.Module):
         x = self.activation(x)
         x = self.conv2(x)
         x = self.activation(x)
-        x = self.MaxPool(x)
+        x = self.maxpool(x)
         return x
 
 
@@ -43,7 +43,7 @@ def crop(image, new_shape):
     width_middle = image.shape[3] // 2
 
     min_height = height_middle - (new_shape[2] // 2)
-    max_height = min_height + new_shape[2] // 2
+    max_height = min_height + new_shape[2]
     min_width = width_middle - (new_shape[3] // 2)
     max_width = min_width + new_shape[3]
 
